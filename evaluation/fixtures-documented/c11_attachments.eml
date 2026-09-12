@@ -1,0 +1,26 @@
+Received: from a.example (a.example [203.0.113.9]) by b.example; Tue, 3 Feb 2026 09:00:00 +0200
+Authentication-Results: b.example; spf=pass smtp.mailfrom=example.com; dkim=pass header.d=example.com; dmarc=pass header.from=example.com
+From: Supplier <sales@example.com>
+To: user@recipient.example
+Subject: Invoice
+Date: Tue, 3 Feb 2026 09:00:00 +0200
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="XBOUND"
+
+--XBOUND
+Content-Type: text/plain; charset=UTF-8
+
+See attached.
+--XBOUND
+Content-Type: application/octet-stream; name="invoice.pdf.exe"
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename="invoice.pdf.exe"
+
+QUJDREVGRw==
+--XBOUND
+Content-Type: application/vnd.ms-excel.sheet.macroEnabled.12; name="report.xlsm"
+Content-Disposition: attachment; filename="report.xlsm"
+Content-Transfer-Encoding: base64
+
+QUJD
+--XBOUND--

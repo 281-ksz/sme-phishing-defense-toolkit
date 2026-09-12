@@ -1,0 +1,13 @@
+Return-Path: <billing@example.com>
+Received: from mx.example.com (mx.example.com [198.51.100.10]) by mail.recipient.example (Postfix) with ESMTPS id A1B2C3; Tue, 3 Feb 2026 09:14:22 +0200
+Authentication-Results: mail.recipient.example; spf= ; dkim==broken; dmarc
+DKIM-Signature: v=1; a=rsa-sha256; d=example.com; s=selector1; h=from:subject:date; b=AbCdEf
+From: "Example Billing" <billing@example.com>
+To: office@recipient.example
+Subject: =?UTF-8?B?0KTQsNC60YLRg9GA0LAgMTIzNA==?=
+Date: Tue, 3 Feb 2026 09:14:00 +0200
+Message-ID: <20260203.a1@example.com>
+Content-Type: text/plain; charset=UTF-8
+
+Здравейте, прикачената фактура е за месец януари.
+Подробности: https://example.com/invoices/1234

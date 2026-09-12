@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SME Phishing Defense Toolkit</title>
+<meta name="description" content="Local phishing defense toolkit for small and medium organizations. Email analysis, domain posture, organizational assessment.">
+<meta name="referrer" content="no-referrer">
+<link rel="stylesheet" href="assets/css/styles.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='5' fill='%231c5468'/%3E%3Cpath d='M16 6l8 3v7c0 5-3.4 8.6-8 10-4.6-1.4-8-5-8-10V9z' fill='none' stroke='white' stroke-width='2'/%3E%3C/svg%3E">
+</head>
+<body>
+
+<a class="skip" href="#main" data-i18n="a11y.skip">Към основното съдържание</a>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="brand">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+        <path d="M16 3l11 4v9.5C27 23.5 22.3 28.6 16 30.5 9.7 28.6 5 23.5 5 16.5V7z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+        <path d="M11 16.2l3.4 3.4L21.4 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span class="brand-text">
+        <span class="brand-name">SME Phishing Defense Toolkit</span>
+        <span class="brand-sub" data-i18n="brand.sub">Локален инструмент за защита от фишинг</span>
+      </span>
+    </div>
+
+    <div class="masthead-tools">
+      <p class="netstate" id="netstate">
+        <span class="netstate-dot" id="netstate-dot" aria-hidden="true"></span>
+        <span id="netstate-text" data-i18n="net.local">Локален режим. Няма мрежова активност.</span>
+      </p>
+      <div class="lang" role="group" aria-label="Language">
+        <button type="button" class="lang-btn" data-lang="bg" aria-pressed="true">БГ</button>
+        <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+      <button type="button" class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="rail">
+        <span data-i18n="nav.menu">Меню</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="shell">
+
+  <nav class="rail" id="rail" aria-label="Sections">
+    <ol class="rail-list">
+      <li><a href="#home" data-nav="home" data-i18n="nav.home">Начало</a></li>
+      <li><a href="#analyze" data-nav="analyze" data-i18n="nav.analyze">Анализ на имейл</a></li>
+      <li><a href="#domain" data-nav="domain" data-i18n="nav.domain">Проверка на домейн</a></li>
+      <li><a href="#assess" data-nav="assess" data-i18n="nav.assess">Оценка на организацията</a></li>
+      <li><a href="#plan" data-nav="plan" data-i18n="nav.plan">План за действие</a></li>
+      <li><a href="#checklists" data-nav="checklists" data-i18n="nav.checklists">Чеклисти</a></li>
+      <li><a href="#trees" data-nav="trees" data-i18n="nav.trees">Дървета за решение</a></li>
+      <li><a href="#guide" data-nav="guide" data-i18n="nav.guide">Техническо ръководство</a></li>
+      <li><a href="#glossary" data-nav="glossary" data-i18n="nav.glossary">Речник</a></li>
+      <li><a href="#privacy" data-nav="privacy" data-i18n="nav.privacy">Поверителност</a></li>
+      <li><a href="#sources" data-nav="sources" data-i18n="nav.sources">Източници</a></li>
+    </ol>
+  </nav>
+
+  <main id="main" tabindex="-1">
+
+    <!-- ============ HOME ============ -->
+    <section class="view" id="view-home" hidden>
+      <div class="hero">
+        <p class="hero-kicker" data-i18n="home.kicker">Работи офлайн. Без профил. Без изкуствен интелект.</p>
+        <h1 data-i18n="home.title">Три технически проверки и ясни стъпки след подозрителен имейл.</h1>
+        <p class="hero-lede" data-i18n="home.lede">Инструментът анализира подозрителни съобщения във вашия браузър, оценява защитата на домейн и профилира организацията ви. Съдържанието на имейлите не напуска устройството.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#analyze" data-i18n="home.cta.analyze">Анализирай подозрителен имейл</a>
+          <a class="btn" href="#domain" data-i18n="home.cta.domain">Провери домейн</a>
+          <a class="btn" href="#assess" data-i18n="home.cta.assess">Оцени организацията</a>
+          <a class="btn btn-quiet" href="#checklists" data-i18n="home.cta.incident">Бърз чеклист при инцидент</a>
+        </div>
+      </div>
+
+      <div class="split" id="home-body"></div>
+    </section>
+
+    <!-- ============ ANALYZE EMAIL ============ -->
+    <section class="view" id="view-analyze" hidden>
+      <h1 data-i18n="analyze.title">Анализ на имейл</h1>
+      <p class="lede" data-i18n="analyze.lede">Заредете подозрително съобщение като файл .eml. Разборът се извършва изцяло в браузъра.</p>
+
+      <p class="badge badge-local">
+        <span class="badge-dot" aria-hidden="true"></span>
+        <span data-i18n="badge.local">Обработва се локално на това устройство</span>
+      </p>
+
+      <details class="panel disclosure" id="eml-help">
+        <summary data-i18n="analyze.help.summary">Как да получа файл .eml?</summary>
+        <div class="disclosure-body" id="eml-help-body"></div>
+      </details>
+
+      <div class="panel" id="eml-drop">
+        <div class="drop" id="drop-zone" tabindex="0" role="button" aria-describedby="drop-hint">
+          <svg class="drop-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M12 16V4m0 0L8 8m4-4l4 4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M4 15v3a2 2 0 002 2h12a2 2 0 002-2v-3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+          </svg>
+          <p class="drop-title" data-i18n="analyze.drop.title">Пуснете файл .eml тук</p>
+          <p class="drop-hint" id="drop-hint" data-i18n="analyze.drop.hint">или изберете файл от устройството. Приемат се само файлове .eml.</p>
+          <input type="file" id="eml-input" accept=".eml,message/rfc822" class="visually-hidden">
+          <button type="button" class="btn btn-primary" id="eml-pick" data-i18n="analyze.drop.pick">Избери файл</button>
+        </div>
+        <p class="form-error" id="eml-error" role="alert" hidden></p>
+      </div>
+
+      <div id="eml-result" class="result-region" aria-live="polite"></div>
+    </section>
+
+    <!-- ============ CHECK DOMAIN ============ -->
+    <section class="view" id="view-domain" hidden>
+      <h1 data-i18n="domain.title">Проверка на домейн</h1>
+      <p class="lede" data-i18n="domain.lede">Оценка на състоянието на защитата на имейл домейн. Това не е пълен одит на сигурността.</p>
+
+      <div class="panel">
+        <h2 class="panel-title" data-i18n="domain.mode.title">Изберете режим</h2>
+        <div class="radio-set" role="radiogroup" aria-labelledby="domain-mode-label">
+          <span class="visually-hidden" id="domain-mode-label" data-i18n="domain.mode.title">Изберете режим</span>
+          <label class="radio-card">
+            <input type="radio" name="domain-mode" value="privacy" checked>
+            <span class="radio-body">
+              <span class="radio-title" data-i18n="domain.mode.privacy.title">Режим без мрежа</span>
+              <span class="radio-desc" data-i18n="domain.mode.privacy.desc">Поставяте DNS записите ръчно. Не се изпраща нищо навън.</span>
+            </span>
+          </label>
+          <label class="radio-card">
+            <input type="radio" name="domain-mode" value="online">
+            <span class="radio-body">
+              <span class="radio-title" data-i18n="domain.mode.online.title">Онлайн DNS проверка</span>
+              <span class="radio-desc" data-i18n="domain.mode.online.desc">Изпраща само име на домейн и тип запис към избран DNS резолвер.</span>
+            </span>
+          </label>
+        </div>
+      </div>
+
+      <div class="panel" id="domain-privacy-panel">
+        <h2 class="panel-title" data-i18n="domain.manual.title">Ръчно въведени записи</h2>
+        <div id="domain-manual-help"></div>
+        <div class="field">
+          <label for="manual-domain" data-i18n="domain.field.domain">Домейн (по избор, само за етикет в резултата)</label>
+          <input type="text" id="manual-domain" autocomplete="off" spellcheck="false" placeholder="example.com">
+        </div>
+        <div class="field">
+          <label for="manual-spf" data-i18n="domain.field.spf">SPF запис (TXT на домейна)</label>
+          <textarea id="manual-spf" rows="2" spellcheck="false" placeholder="v=spf1 include:_spf.example.net ~all"></textarea>
+        </div>
+        <div class="field">
+          <label for="manual-dmarc" data-i18n="domain.field.dmarc">DMARC запис (TXT на _dmarc.домейн)</label>
+          <textarea id="manual-dmarc" rows="2" spellcheck="false" placeholder="v=DMARC1; p=none; rua=mailto:dmarc@example.com"></textarea>
+        </div>
+        <div class="field">
+          <label for="manual-dkim" data-i18n="domain.field.dkim">DKIM запис (TXT на селектор._domainkey.домейн)</label>
+          <textarea id="manual-dkim" rows="2" spellcheck="false" placeholder="v=DKIM1; k=rsa; p=MIGfMA0G..."></textarea>
+        </div>
+        <div class="field two">
+          <div>
+            <label for="manual-mtasts" data-i18n="domain.field.mtasts">MTA-STS запис (TXT на _mta-sts.домейн)</label>
+            <input type="text" id="manual-mtasts" spellcheck="false" placeholder="v=STSv1; id=20260101T000000Z">
+          </div>
+          <div>
+            <label for="manual-tlsrpt" data-i18n="domain.field.tlsrpt">TLS-RPT запис (TXT на _smtp._tls.домейн)</label>
+            <input type="text" id="manual-tlsrpt" spellcheck="false" placeholder="v=TLSRPTv1; rua=mailto:tls@example.com">
+          </div>
+        </div>
+        <div class="field">
+          <label for="manual-bimi" data-i18n="domain.field.bimi">BIMI запис (TXT на default._bimi.домейн)</label>
+          <input type="text" id="manual-bimi" spellcheck="false" placeholder="v=BIMI1; l=https://example.com/logo.svg">
+        </div>
+        <button type="button" class="btn btn-primary" id="manual-run" data-i18n="domain.manual.run">Анализирай въведените записи</button>
+      </div>
+
+      <div class="panel" id="domain-online-panel" hidden>
+        <h2 class="panel-title" data-i18n="domain.online.title">Онлайн проверка</h2>
+        <div class="field">
+          <label for="online-domain" data-i18n="domain.online.domain">Домейн за проверка</label>
+          <input type="text" id="online-domain" autocomplete="off" spellcheck="false" placeholder="example.com">
+        </div>
+        <div class="field">
+          <label for="online-selectors" data-i18n="domain.online.selectors">DKIM селектори (по избор, разделени със запетая)</label>
+          <input type="text" id="online-selectors" autocomplete="off" spellcheck="false" placeholder="selector1, google, k1">
+          <p class="field-note" id="selector-note"></p>
+        </div>
+        <div class="field">
+          <label for="online-resolver" data-i18n="domain.online.resolver">DNS резолвер</label>
+          <select id="online-resolver">
+            <option value="cloudflare">Cloudflare (cloudflare-dns.com)</option>
+            <option value="google">Google (dns.google)</option>
+          </select>
+        </div>
+        <label class="check">
+          <input type="checkbox" id="online-expand">
+          <span data-i18n="domain.online.expand">Проследи включванията в SPF (изпраща допълнителни имена на домейни към резолвера)</span>
+        </label>
+
+        <div class="consent" id="consent-box">
+          <h3 data-i18n="domain.consent.title">Какво напуска устройството</h3>
+          <div id="consent-body"></div>
+          <div class="consent-preview">
+            <p class="consent-preview-title" data-i18n="domain.consent.willquery">Ще бъдат заявени:</p>
+            <div id="consent-queries"></div>
+          </div>
+          <label class="check">
+            <input type="checkbox" id="consent-check">
+            <span data-i18n="domain.consent.agree">Разбирам и стартирам проверката</span>
+          </label>
+          <button type="button" class="btn btn-primary" id="online-run" disabled data-i18n="domain.online.run">Стартирай DNS проверката</button>
+        </div>
+        <p class="form-error" id="domain-error" role="alert" hidden></p>
+      </div>
+
+      <div id="domain-result" class="result-region" aria-live="polite"></div>
+    </section>
+
+    <!-- ============ ASSESS ORGANIZATION ============ -->
+    <section class="view" id="view-assess" hidden>
+      <h1 data-i18n="assess.title">Оценка на организацията</h1>
+      <p class="lede" data-i18n="assess.lede">Въпросникът не пита за име, домейн, адрес или друга идентифицираща информация.</p>
+      <form id="assess-form" novalidate>
+        <div id="assess-questions"></div>
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary" data-i18n="assess.run">Изчисли профила</button>
+          <button type="button" class="btn btn-quiet" id="assess-reset" data-i18n="assess.reset">Изчисти отговорите</button>
+        </div>
+        <p class="form-error" id="assess-error" role="alert" hidden></p>
+      </form>
+      <div id="assess-result" class="result-region" aria-live="polite"></div>
+    </section>
+
+    <!-- ============ ACTION PLAN ============ -->
+    <section class="view" id="view-plan" hidden>
+      <h1 data-i18n="plan.title">План за действие</h1>
+      <p class="lede" data-i18n="plan.lede">Приоритизирани мерки в три хоризонта. След попълване на оценката планът се съобразява с капацитета ви.</p>
+      <div id="plan-body"></div>
+    </section>
+
+    <!-- ============ CHECKLISTS ============ -->
+    <section class="view" id="view-checklists" hidden>
+      <h1 data-i18n="checklists.title">Чеклисти</h1>
+      <p class="lede" data-i18n="checklists.lede">Отметките са само за текущата сесия. Нищо не се запазва.</p>
+      <div id="checklists-body"></div>
+    </section>
+
+    <!-- ============ DECISION TREES ============ -->
+    <section class="view" id="view-trees" hidden>
+      <h1 data-i18n="trees.title">Дървета за решение</h1>
+      <p class="lede" data-i18n="trees.lede">Кратки последователности от въпроси за използване по време на инцидент.</p>
+      <div id="trees-body"></div>
+    </section>
+
+    <!-- ============ TECHNICAL GUIDE ============ -->
+    <section class="view" id="view-guide" hidden>
+      <h1 data-i18n="guide.title">Техническо ръководство</h1>
+      <p class="lede" data-i18n="guide.lede">Всяка тема следва един и същ шаблон от девет въпроса.</p>
+      <div id="guide-body"></div>
+    </section>
+
+    <!-- ============ GLOSSARY ============ -->
+    <section class="view" id="view-glossary" hidden>
+      <h1 data-i18n="glossary.title">Речник</h1>
+      <p class="lede" data-i18n="glossary.lede">Кратки определения на термините, използвани в инструмента.</p>
+      <div class="field field-search">
+        <label for="glossary-filter" data-i18n="glossary.filter">Филтрирай по термин</label>
+        <input type="search" id="glossary-filter" autocomplete="off" spellcheck="false">
+      </div>
+      <div id="glossary-body"></div>
+    </section>
+
+    <!-- ============ PRIVACY ============ -->
+    <section class="view" id="view-privacy" hidden>
+      <h1 data-i18n="privacy.title">Поверителност</h1>
+      <div id="privacy-body"></div>
+    </section>
+
+    <!-- ============ SOURCES ============ -->
+    <section class="view" id="view-sources" hidden>
+      <h1 data-i18n="sources.title">Източници</h1>
+      <p class="lede" data-i18n="sources.lede">Пълният списък с дата на последна проверка се намира в docs/SOURCES.md на хранилището.</p>
+      <div id="sources-body"></div>
+    </section>
+
+  </main>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p data-i18n="footer.reset.note">Всички данни се пазят само в паметта на страницата. Затварянето или презареждането ги изтрива.</p>
+    <button type="button" class="btn btn-quiet" id="global-reset" data-i18n="footer.reset">Изчисти цялото състояние</button>
+  </div>
+</footer>
+
+<noscript>
+  <div class="noscript">
+    <p>This toolkit runs entirely in your browser and requires JavaScript. The written guidance is also available as Markdown in the docs directory of the repository.</p>
+    <p>Инструментът работи изцяло във вашия браузър и изисква JavaScript. Писмените указания са налични и като Markdown в директорията docs на хранилището.</p>
+  </div>
+</noscript>
+
+<script src="assets/js/i18n.js"></script>
+<script src="assets/js/rules.js"></script>
+<script src="assets/js/eml-analyzer.js"></script>
+<script src="assets/js/domain-check.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>

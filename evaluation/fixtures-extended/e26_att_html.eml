@@ -1,0 +1,20 @@
+Received: from a.example (a.example [203.0.113.9]) by b.example; Tue, 3 Feb 2026 09:00:00 +0200
+Authentication-Results: b.example; spf=pass smtp.mailfrom=example.com; dkim=pass header.d=example.com; dmarc=pass header.from=example.com
+From: A <a@example.com>
+To: u@r.example
+Subject: t
+Date: Tue, 3 Feb 2026 09:00:00 +0200
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="B1"
+
+--B1
+Content-Type: text/plain
+
+see attached
+--B1
+Content-Type: text/html; name="report.html"
+Content-Disposition: attachment; filename="report.html"
+Content-Transfer-Encoding: base64
+
+QUJDRA==
+--B1--

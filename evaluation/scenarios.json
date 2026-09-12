@@ -1,0 +1,125 @@
+{
+ "S1": {
+  "size": "micro",
+  "model": "onsite",
+  "profile": "internal",
+  "unknown": "rare",
+  "attachments": "rare",
+  "payments": "no",
+  "roles": [],
+  "criticality": "low",
+  "mfa": "none",
+  "domainauth": "unknown",
+  "filtering": "none",
+  "reporting": "none",
+  "incident": "none",
+  "training": "none",
+  "capacity": "H0",
+  "finance": "F0"
+ },
+ "S2": {
+  "size": "small",
+  "model": "onsite",
+  "profile": "partners",
+  "unknown": "weekly",
+  "attachments": "core",
+  "payments": "often",
+  "roles": [
+   "finance",
+   "management"
+  ],
+  "criticality": "high",
+  "mfa": "some",
+  "domainauth": "spf",
+  "filtering": "default",
+  "reporting": "informal",
+  "incident": "informal",
+  "training": "none",
+  "capacity": "H1",
+  "finance": "F1"
+ },
+ "S3": {
+  "size": "medium",
+  "model": "hybrid",
+  "profile": "outsourcing",
+  "unknown": "weekly",
+  "attachments": "regular",
+  "payments": "sometimes",
+  "roles": [
+   "itadmin",
+   "sales"
+  ],
+  "criticality": "medium",
+  "mfa": "all",
+  "domainauth": "monitor",
+  "filtering": "managed",
+  "reporting": "defined",
+  "incident": "informal",
+  "training": "adhoc",
+  "capacity": "H2",
+  "finance": "F2"
+ },
+ "S4": {
+  "size": "small",
+  "model": "hybrid",
+  "profile": "clients",
+  "unknown": "daily",
+  "attachments": "core",
+  "payments": "sometimes",
+  "roles": [
+   "hr",
+   "sales"
+  ],
+  "criticality": "medium",
+  "mfa": "some",
+  "domainauth": "spf",
+  "filtering": "default",
+  "reporting": "informal",
+  "incident": "informal",
+  "training": "none",
+  "capacity": "H1",
+  "finance": "F1"
+ },
+ "S5": {
+  "size": "medium",
+  "model": "hybrid",
+  "profile": "clients",
+  "unknown": "daily",
+  "attachments": "regular",
+  "payments": "often",
+  "roles": [
+   "finance",
+   "sales",
+   "itadmin"
+  ],
+  "criticality": "high",
+  "mfa": "all",
+  "domainauth": "enforce",
+  "filtering": "managed",
+  "reporting": "defined",
+  "incident": "written",
+  "training": "adhoc",
+  "capacity": "H2",
+  "finance": "F2"
+ },
+ "S6": {
+  "size": "small",
+  "model": "remote",
+  "profile": "partners",
+  "unknown": "weekly",
+  "attachments": "regular",
+  "payments": "sometimes",
+  "roles": [
+   "itadmin"
+  ],
+  "criticality": "medium",
+  "mfa": "resistant",
+  "domainauth": "enforce",
+  "filtering": "managed",
+  "reporting": "defined",
+  "incident": "written",
+  "training": "regular",
+  "capacity": "H3",
+  "finance": "F3"
+ }
+}

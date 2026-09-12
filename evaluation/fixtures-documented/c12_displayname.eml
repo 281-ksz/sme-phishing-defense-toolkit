@@ -1,0 +1,9 @@
+Received: from a.example (a.example [203.0.113.9]) by b.example; Tue, 3 Feb 2026 09:00:00 +0200
+Authentication-Results: b.example; spf=pass smtp.mailfrom=free.example; dkim=none; dmarc=none
+From: "Ivan Petrov <ivan.petrov@realcompany.bg>" <attacker9931@free.example>
+To: user@recipient.example
+Subject: Urgent payment
+Date: Tue, 3 Feb 2026 09:00:00 +0200
+Content-Type: text/plain
+
+Please change the bank account.

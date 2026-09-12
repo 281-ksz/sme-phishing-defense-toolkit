@@ -1,0 +1,27 @@
+Received: from hop1.example (hop1.example [203.0.113.1]) by next1.example; Tue, 3 Feb 2026 09:11:00 +0200
+Received: from hop2.example (hop2.example [203.0.113.2]) by next2.example; Tue, 3 Feb 2026 09:12:00 +0200
+Received: from hop3.example (hop3.example [203.0.113.3]) by next3.example; Tue, 3 Feb 2026 09:13:00 +0200
+Received: from hop4.example (hop4.example [203.0.113.4]) by next4.example; Tue, 3 Feb 2026 09:14:00 +0200
+Received: from hop5.example (hop5.example [203.0.113.5]) by next5.example; Tue, 3 Feb 2026 09:15:00 +0200
+Received: from hop6.example (hop6.example [203.0.113.6]) by next6.example; Tue, 3 Feb 2026 09:16:00 +0200
+Received: from hop7.example (hop7.example [203.0.113.7]) by next7.example; Tue, 3 Feb 2026 09:17:00 +0200
+Received: from hop8.example (hop8.example [203.0.113.8]) by next8.example; Tue, 3 Feb 2026 09:18:00 +0200
+Received: from hop9.example (hop9.example [203.0.113.9]) by next9.example; Tue, 3 Feb 2026 09:19:00 +0200
+Received: from hop10.example (hop10.example [203.0.113.10]) by next10.example; Tue, 3 Feb 2026 09:10:00 +0200
+Received: from hop11.example (hop11.example [203.0.113.11]) by next11.example; Tue, 3 Feb 2026 09:11:00 +0200
+Received: from hop12.example (hop12.example [203.0.113.12]) by next12.example; Tue, 3 Feb 2026 09:12:00 +0200
+Received: from hop13.example (hop13.example [203.0.113.13]) by next13.example; Tue, 3 Feb 2026 09:13:00 +0200
+Received: from hop14.example (hop14.example [203.0.113.14]) by next14.example; Tue, 3 Feb 2026 09:14:00 +0200
+Return-Path: <billing@example.com>
+Received: from mx.example.com (mx.example.com [198.51.100.10]) by mail.recipient.example (Postfix) with ESMTPS id A1B2C3; Tue, 3 Feb 2026 09:14:22 +0200
+Authentication-Results: mail.recipient.example; spf=pass smtp.mailfrom=example.com; dkim=pass header.d=example.com; dmarc=pass header.from=example.com
+DKIM-Signature: v=1; a=rsa-sha256; d=example.com; s=selector1; h=from:subject:date; b=AbCdEf
+From: "Example Billing" <billing@example.com>
+To: office@recipient.example
+Subject: =?UTF-8?B?0KTQsNC60YLRg9GA0LAgMTIzNA==?=
+Date: Tue, 3 Feb 2026 09:14:00 +0200
+Message-ID: <20260203.a1@example.com>
+Content-Type: text/plain; charset=UTF-8
+
+Здравейте, прикачената фактура е за месец януари.
+Подробности: https://example.com/invoices/1234
